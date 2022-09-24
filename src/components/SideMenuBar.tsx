@@ -1,4 +1,4 @@
-import { motion, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 import { useEffect, useState } from "react";
 import { HashLink } from 'react-router-hash-link';
@@ -35,6 +35,7 @@ const ScrollBarBox = styled(motion.div)`
   animation: ${ScrollBarFrame} 4s;
 `;
 
+
 const ScrollBar = styled.div`
   padding: 60px 5px;
   color: white;
@@ -47,7 +48,7 @@ const ScrollBar = styled.div`
 `;
 
 const MenuItem = styled.div`
-  margin-left: 80px;
+  margin-left: 40px;
 `;
 
 const container = {
@@ -67,16 +68,15 @@ const container = {
 };
 
 function SideMenu() {
-  const [selectedName, setSelectedName] = useState("");
-  const location = useLocation();
+  const [selectedName, setSelectedName] = useState("#menu");
+  const { hash } = useLocation();
 
-  const Selected = () => {
-    setSelectedName(location.hash);
-  }
   useEffect(() => {
-    setSelectedName("#menu");
-  }, []);
+    setSelectedName(hash);
+  }, [hash]);
+
   return (
+
     <Menu>
       <ScrollBarBox
         className="container"
@@ -85,23 +85,23 @@ function SideMenu() {
         animate="visible"
       >
         <HashLink smooth to="#menu" style={{ textDecoration: 'none', color: "#DAA520" }} >
-          <ScrollBar onMouseUp={Selected} >
+          <ScrollBar onMouseUp={() => setSelectedName("#menu")} >
             <MenuItem>
               {selectedName === "#menu" ? <span style={{ color: "grey" }}>Menu</span> : <span style={{ color: "white" }}>Menu</span>}
             </MenuItem>
           </ScrollBar>
         </HashLink>
         <HashLink smooth to="#about" style={{ textDecoration: 'none', color: "#DAA520" }}>
-          <ScrollBar onMouseUp={Selected}>
+          <ScrollBar onMouseUp={() => setSelectedName("#about")}>
             <MenuItem>
               {selectedName === "#about" ? <span style={{ color: "grey" }}>About</span> : <span style={{ color: "white" }}>About</span>}
             </MenuItem>
           </ScrollBar>
         </HashLink>
         <HashLink smooth to="#project" style={{ textDecoration: 'none', color: "#DAA520" }}>
-          <ScrollBar onMouseUp={Selected}>
+          <ScrollBar onMouseUp={() => setSelectedName("#project")}>
             <MenuItem >
-              `{selectedName === "#project" ? <span style={{ color: "grey" }}>Project</span> : <span style={{ color: "white" }}>Project</span>}
+              {selectedName === "#project" ? <span style={{ color: "grey" }}>Project</span> : <span style={{ color: "white" }}>Project</span>}
             </MenuItem>
           </ScrollBar>
         </HashLink>
