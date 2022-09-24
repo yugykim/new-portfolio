@@ -37,8 +37,6 @@ const Globalstyle = createGlobalStyle`
   }
   body {
     line-height: 1;
-    font-family: 'Manrope', sans-serif;
-    color: white;
   }
   ol, ul {
     list-style: none;
