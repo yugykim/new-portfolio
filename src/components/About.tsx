@@ -5,6 +5,7 @@ import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-
 import SideMenu from "./SideMenuBar";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { HashLink } from "react-router-hash-link";
+import Arrow from "./Arrow";
 const backgroundImg = require("./img/backgroundImg.png")
 
 const Wrapper = styled.div`
@@ -37,7 +38,7 @@ const InnerFirstOne = styled(motion.div)`
 
 const InnerFirstTwo = styled(motion.div)`
   margin-right: 10px;
-  margin-top: 400px;
+  margin-top: 300px;
 `;
 
 const SecondBox = styled(motion.div)`
@@ -46,6 +47,7 @@ const SecondBox = styled(motion.div)`
   width: 100%;
   font-size: 3vw;
   font-weight: 200;
+  margin-bottom: 2rem;
   @media (max-width: 1028px) {
     font-size: 2.5rem;
   }
@@ -104,7 +106,7 @@ function About() {
           <InnerFirstOne>Software Development Student <br /><br />& Graduation in 2023</InnerFirstOne>
           <InnerFirstTwo>
             <HashLink smooth to="#project" style={{ textDecoration: 'none' }} >
-              <FontAwesomeIcon style={{ fontSize: "80px", color: "white"}} icon={faArrowRight} />
+              <Arrow />
             </HashLink>
           </InnerFirstTwo>
         </FirstBox>

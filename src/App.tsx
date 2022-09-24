@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Main from "./components/Main";
 import About from "./components/About";
 import Project from "./components/Project";
+import { useEffect, useState } from "react";
 
 const Globalstyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,200&display=swap');
@@ -39,6 +40,7 @@ const Globalstyle = createGlobalStyle`
     line-height: 1;
     font-family: 'Manrope', sans-serif;
     color: white;
+    background-color: #191717;
   }
   ol, ul {
     list-style: none;
@@ -74,6 +76,7 @@ const ContentWrap = styled(motion.div)`
 
 function App() {
   const mainTheme = useRecoilValue(mainAtom);
+
   return (
     <ThemeProvider theme={mainTheme ? isMainTheme : isDocTheme}>
       <Globalstyle />

@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import SideMenu from "./SideMenuBar";
 import TopMenu from "./TopMenu";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Arrow from "./Arrow";
 import { HashLink } from "react-router-hash-link";
 const backgroundImg = require("./img/backgroundImg.png")
 
@@ -27,7 +26,7 @@ const Greeting = styled(motion.div)`
   align-self: flex-end;
 `;
 
-const Arrow = styled(motion.div)`
+const ArrowWrap = styled(motion.div)`
   flex: 1;
   display: flex;
   align-items: center;
@@ -102,11 +101,15 @@ function Main() {
             <Content variants={textVariants}>Hi,</Content>
             <Content variants={textVariants}>My name is Yugy</Content>
           </Greeting>
-          <Arrow variants={ArrowVariants} initial="start" animate="end" >
+          <ArrowWrap
+            variants={ArrowVariants}
+            initial="start"
+            animate="end"
+            >
             <HashLink smooth to="#about" style={{ textDecoration: 'none' }} >
-              <FontAwesomeIcon style={{ fontSize: "80px", marginRight: "30px", color: "white" }} icon={faArrowRight} />
+              <Arrow />
             </HashLink>
-          </Arrow>
+          </ArrowWrap>
         </TextBox>
       </Contents>
     </Wrapper>
