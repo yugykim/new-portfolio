@@ -4,6 +4,8 @@ import SideMenu from "./SideMenuBar";
 import TopMenu from "./TopMenu";
 import Arrow from "./Arrow";
 import { HashLink } from "react-router-hash-link";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const backgroundImg = require("./img/backgroundImg.png")
 
 const Wrapper = styled(motion.div)`
@@ -16,21 +18,15 @@ const Wrapper = styled(motion.div)`
 `;
 
 const TextBox = styled.div`
-  height: 80%;
+  height: 90%;
   display: flex;
   margin-left: 7rem;
 `;
 
-const Greeting = styled(motion.div)`
+const FirstWrapper = styled(motion.div)`
   flex: 2;
   align-self: flex-end;
-`;
-
-const ArrowWrap = styled(motion.div)`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: right;
+  margin-bottom: 60px;
 `;
 
 const Content = styled(motion.p)`
@@ -39,6 +35,67 @@ const Content = styled(motion.p)`
 
 const Contents = styled(motion.div)`
   width: 100%;
+`;
+
+const SecondWrapper = styled(motion.div)`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ArrowWrap = styled(motion.div)`
+  height: 70%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+`;
+
+const ContactWrapper = styled(motion.div)`
+  height: 30%;
+  display: flex;
+  justify-content: right;
+`;
+
+const Contact = styled(motion.div)`
+  align-self: flex-end;
+  height: 180px;
+  width: 250px;
+  position: relative;
+  background-image: url(${backgroundImg});
+  color: white;
+  text-align: right;
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-bottom: 180px solid black;
+    border-left: 120px solid transparent;
+    left: -3px;
+    top: -1px;
+  }
+
+  a:hover, a:visited, a:link, a:active {
+      text-decoration: none;
+  }
+
+  div {
+    margin-left: 115px;
+    height: 99%;
+    width: 60%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  
+    p {
+      color: #FFFFFF;
+      text-decoration: none;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+  }
 `;
 
 const boxVariants = {
@@ -95,24 +152,36 @@ function Main() {
         <SideMenu />
         <TopMenu />
         <TextBox>
-          <Greeting
+          <FirstWrapper
             variants={boxVariants} initial="start" animate="end"
           >
             <Content variants={textVariants}>Hi,</Content>
             <Content variants={textVariants}>My name is Yugy</Content>
-          </Greeting>
-          <ArrowWrap
+          </FirstWrapper>
+          <SecondWrapper
             variants={ArrowVariants}
             initial="start"
             animate="end"
-            >
-            <HashLink smooth to="#about" style={{ textDecoration: 'none' }} >
-              <Arrow />
-            </HashLink>
-          </ArrowWrap>
+          >
+            <ArrowWrap>
+              <HashLink smooth to="#about" style={{ textDecoration: 'none' }} >
+                <Arrow />
+              </HashLink>
+            </ArrowWrap>
+            <ContactWrapper>
+              <Contact>
+                <a href="mailto:yugy.yugyeong.gmail.com">
+                  <div>
+                    <FontAwesomeIcon style={{ "marginBottom": "8px", "fontSize": "30px" }} icon={faPaperPlane} />
+                    <p>Contact me</p>
+                  </div>
+                </a>
+              </Contact>
+            </ContactWrapper>
+          </SecondWrapper>
         </TextBox>
       </Contents>
-    </Wrapper>
+    </Wrapper >
   );
 }
 
