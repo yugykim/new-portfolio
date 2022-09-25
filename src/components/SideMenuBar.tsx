@@ -20,19 +20,19 @@ const ScrollBarFrame = keyframes`
     height: 0%
   }
   100% {
-    height: 70%
+    height: 60%
   }
 `;
 
 const ScrollBarBox = styled(motion.div)`
-  margin-top: 150px;
+  margin-top: 120px;
   margin-left: 20px;
   width: 10px;
-  height: 70%;
+  height: 60%;
   padding: 10px;
   border-left: 2px solid grey;
   position: absolute;
-  animation: ${ScrollBarFrame} 4s;
+  animation: ${ScrollBarFrame} 1.5s;
 `;
 
 
@@ -48,7 +48,7 @@ const ScrollBar = styled.div`
 `;
 
 const MenuItem = styled.div`
-  margin-left: 40px;
+  margin-left: -5px;
 `;
 
 const container = {
