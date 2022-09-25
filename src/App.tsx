@@ -8,6 +8,7 @@ import Main from "./components/Main";
 import About from "./components/About";
 import Project from "./components/Project";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Globalstyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,200&display=swap');
@@ -76,15 +77,16 @@ const ContentWrap = styled(motion.div)`
 
 function App() {
   const mainTheme = useRecoilValue(mainAtom);
-
+  
   return (
     <ThemeProvider theme={mainTheme ? isMainTheme : isDocTheme}>
       <Globalstyle />
       <Wrapper>
         <ContentWrap>
           <HorizontalScroll
+            reverseScroll={true}
             config={{ stiffness: 5, damping: 3 }}
-            animValues={80}
+            animValues={110}
           >
             <Main />
             <About />
