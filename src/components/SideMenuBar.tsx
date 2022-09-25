@@ -68,7 +68,7 @@ const container = {
 };
 
 function SideMenu() {
-  const [selectedName, setSelectedName] = useState("#menu");
+  const [selectedName, setSelectedName] = useState("");
   const { hash } = useLocation();
 
   useEffect(() => {
