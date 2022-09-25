@@ -6,13 +6,12 @@ const Header = styled.div`
   display: flex;
   margin-top: 30px;
   font-size: 20px;
-  width: 95%;
+  width: 99%;
   justify-content: space-between;
   color: black;
 `;
 
 const Menu = styled(motion.div)`
-  margin: 0 1.5rem;
 `;
 
 const HireMeLogo = keyframes`
@@ -37,7 +36,6 @@ function Main() {
         </Menu>
         <HireMe
         >
-          <a href="mailto:yugy.yugyeong.gmail.com">
             <svg viewBox="0 0 100 100" width="100" height="100">
               <defs>
                 <path id="circle"
@@ -54,7 +52,6 @@ function Main() {
                 </textPath>
               </text>
             </svg>
-          </a>
         </HireMe>
       </Header>
     </>
