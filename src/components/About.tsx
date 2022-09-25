@@ -2,10 +2,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faFolderClosed } from "@fortawesome/free-regular-svg-icons";
+import { faFolderOpen } from "@fortawesome/free-regular-svg-icons";
 import SideMenu from "./SideMenuBar";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { HashLink } from "react-router-hash-link";
 import Arrow from "./Arrow";
+import { useState } from "react";
+const resume = require("./resume/yugyresume.pdf");
 const backgroundImg = require("./img/backgroundImg.png")
 
 const Wrapper = styled.div`
@@ -69,6 +72,11 @@ const InnerContentSecond = styled(motion.div)`
   justify-content: center;
 `;
 
+const Icon = styled(FontAwesomeIcon)`
+  margin-right": 20px, 
+  color: white,
+`;
+
 const boxVariants = {
   start: {
     opacity: 0,
@@ -98,6 +106,11 @@ const contentVariants = {
 }
 
 function About() {
+  const [downloadedResume, setDownloadResume] = useState(false);
+
+  const downloadingResume = () => {
+    setDownloadResume(true);
+  };
   return (
     <Wrapper id="about">
       <SideMenu />
@@ -117,7 +130,11 @@ function About() {
           <InnerContentSecond>
             <a href="https://github.com/yugykim"><FontAwesomeIcon style={{ "marginRight": "20px", "color": "white" }} icon={faGithub} /></a>
             <a href="https://www.linkedin.com/in/yugy-kim-20a16b225/"><FontAwesomeIcon style={{ "marginRight": "20px", "color": "white" }} icon={faLinkedin} /></a>
-            <a href="https://www.instagram.com/yugyeongkim2/"><FontAwesomeIcon style={{ "color": "white" }} icon={faInstagram} /></a>
+            <a href="https://www.instagram.com/yugyeongkim2/"><FontAwesomeIcon style={{ "marginRight": "20px", "color": "white" }} icon={faInstagram} /></a>
+            {downloadedResume ?
+              <FontAwesomeIcon style={{ "color": "white" }} icon={faFolderOpen} />
+              : <a href={`${resume}`} download="YugyResume" onClick={downloadingResume}><FontAwesomeIcon style={{ "color": "white" }} icon={faFolderClosed} /></a>
+            }
           </InnerContentSecond>
         </SecondBox>
       </InnerWrapper>
