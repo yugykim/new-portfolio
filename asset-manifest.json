@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/new-portfolio/static/js/main.fea21f39.js",
+    "main.js": "/new-portfolio/static/js/main.a6306d8b.js",
     "static/media/firstG.png": "/new-portfolio/static/media/firstG.e6fc51b24d43c6df61bb.png",
     "static/media/netflixReact.png": "/new-portfolio/static/media/netflixReact.2700b5dc65290a4137a5.png",
     "static/media/Lebistro.png": "/new-portfolio/static/media/Lebistro.7f28b60f2c2ac3c26bfe.png",
@@ -13,9 +13,9 @@
     "static/media/yugyresume.pdf": "/new-portfolio/static/media/yugyresume.233e154066ce1c701e4b.pdf",
     "static/media/backgroundImg.png": "/new-portfolio/static/media/backgroundImg.fe907bfd9ac7ca36ab26.png",
     "index.html": "/new-portfolio/index.html",
-    "main.fea21f39.js.map": "/new-portfolio/static/js/main.fea21f39.js.map"
+    "main.a6306d8b.js.map": "/new-portfolio/static/js/main.a6306d8b.js.map"
   },
   "entrypoints": [
-    "static/js/main.fea21f39.js"
+    "static/js/main.a6306d8b.js"
   ]
 }
