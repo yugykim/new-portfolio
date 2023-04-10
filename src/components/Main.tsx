@@ -26,7 +26,7 @@ const TextBox = styled.div`
 const FirstWrapper = styled(motion.div)`
   flex: 2;
   align-self: flex-end;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 `;
 
 const Content = styled(motion.p)`

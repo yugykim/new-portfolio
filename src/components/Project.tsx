@@ -11,23 +11,27 @@ const todoReact = require("./img/todoReact.png")
 const uberEat = require("./img/uberEat.png")
 const netflixReact = require("./img/netflixReact.png")
 const backgroundImg = require("./img/backgroundImg.png")
+const Capstone = require("./img/capstone.png")
 
 const Wrapper = styled(motion.div)`
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
+  height: 100vh;
   background-image: url(${backgroundImg});
 `;
 
 const InnerWrapper = styled(motion.div)`
   display: flex;
-  height: 100vh;
   margin-left: 80px;
   align-items: center;
 `;
 
 const ProjBox = styled.div`
   display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 `;
 
@@ -66,6 +70,7 @@ function Project() {
         <ProjBox>
           <a href="https://github.com/yugykim/nasa-picture-viewer" target="_blank" rel="noopener noreferrer"><Img src={nasaPic} /></a>
           <a href="https://github.com/yugykim/myfirstwebsite" target="_blank" rel="noopener noreferrer"><Img src={firstWeb} /></a>
+          <a href="http://ec2-3-15-148-140.us-east-2.compute.amazonaws.com/" target="_blank" rel="noopener noreferrer"><Img src={Capstone} /></a>
         </ProjBox>
       </InnerWrapper>
     </Wrapper>
